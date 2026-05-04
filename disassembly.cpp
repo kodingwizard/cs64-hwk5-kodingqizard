@@ -35,7 +35,6 @@ string disassemble(string hex) {
     long immediate_mask = 0x0000FFFF;
 
     long immediate = (input & immediate_mask);
-    cout << immediate;
     input = input >> 16;
     long rs = (input & reg_mask);
     input = input >> 5;
