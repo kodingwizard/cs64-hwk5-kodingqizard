@@ -74,8 +74,9 @@ string disassemble(string hex) {
     if (immediate >> 15 == 1){
         immediate = immediate ^ 0x0000FFFF;
         immediate = immediate + 1;
+        result += "-" + to_string(immediate);
     }
-    result += "-" + to_string(immediate);
+    else {result +=  to_string(immediate);}
     // You want to retrieve all the separate fields of an I-type instruction
     //      to help you figure out what the assembly instruction is.
     //
