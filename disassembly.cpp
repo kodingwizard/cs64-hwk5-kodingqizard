@@ -45,7 +45,7 @@ string disassemble(string hex) {
 
     //getting command
     if (opcode == 8){
-        result += "addi, ";
+        result += "addi ";
     }
     else if(opcode == 9){
         result += "addiu, ";
