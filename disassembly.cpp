@@ -35,6 +35,7 @@ string disassemble(string hex) {
     long immediate_mask = 0x0000FFFF;
 
     long immediate = (input & immediate_mask);
+    cout << immediate;
     input = input >> 16;
     long rs = (input & reg_mask);
     input = input >> 5;
@@ -64,10 +65,17 @@ string disassemble(string hex) {
         result += "ori, ";
     }
     
-    result += registers[rt - 8] + ", ";
     result += registers[rs - 8] + ", ";
+    result += registers[rt - 8] + ", ";
 
-    result += to_string(immediate);
+
+
+    //check if immediate value is negative
+    if (immediate >> 15 == 1){
+        immediate = immediate ^ 0x0000FFFF;
+        immediate = immediate + 1;
+    }
+    result += "-" + to_string(immediate);
     // You want to retrieve all the separate fields of an I-type instruction
     //      to help you figure out what the assembly instruction is.
     //
