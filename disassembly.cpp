@@ -48,20 +48,20 @@ string disassemble(string hex) {
         result += "addi ";
     }
     else if(opcode == 9){
-        result += "addiu, ";
+        result += "addiu ";
     }
     else if (opcode == 10){
-        result += "slti, ";
+        result += "slti ";
     }
     else if (opcode == 11){
-        result += "sltiu, ";
+        result += "sltiu ";
 
     }
     else if (opcode == 12){
-        result += "andi, ";
+        result += "andi ";
     }
     else{
-        result += "ori, ";
+        result += "ori ";
     }
     
     result += registers[rs - 8] + ", ";
